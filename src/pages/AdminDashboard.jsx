@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-    ResponsiveContainer,
-    BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
-    LineChart, Line, PieChart, Pie, Cell, Legend
+import {ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, LineChart, Line, PieChart, Pie, Cell, Legend
 } from "recharts";
 import AdminNavbar from "../components/AdminNavbar";
 

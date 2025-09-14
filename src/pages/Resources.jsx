@@ -1,5 +1,5 @@
 import Header from "../components/Navbar";
-import { useStat,useEffect } from "react";
+import { useState ,useEffect } from "react";
 import Card from "../components/ResourceCard";
 
 const resources = {

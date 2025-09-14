@@ -51,7 +51,7 @@ export default function Login() {
           <form className="space-y-5">
             <input
               type="text"
-              placeholder="Email address"
+              placeholder="Username/Email"
               onChange={(e) => { setID(e.target.value) }}
               className="w-full px-4 py-3 rounded-lg bg-gray-50 text-gray-800 placeholder-gray-400 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />

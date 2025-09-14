@@ -7,7 +7,6 @@ const Navbar = () => {
   const location = useLocation();
 
   const navigation = [
-    // { name: "Home", href: "/" },
     { name: "Dashboard", href: "/dashboard" },
     { name: "Community", href: "/community" },
     { name: "Resources", href: "/resources" },

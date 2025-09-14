@@ -156,8 +156,8 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-hero">
-                <span className="text-lg font-bold text-white">🎯</span>
+              <div className="flex items-center justify-center md:w-10 md:h-10 w-8 h-8 border-black border-2 rounded-xl ">
+                <img src="/logo.png" alt="" />
               </div>
               <div>
                 <div className="font-bold">SANTULAN</div>
@@ -165,7 +165,7 @@ const Home = () => {
               </div>
             </div>
             <div className="text-sm text-muted-foreground">
-              © 2024 Santulan. Empowering student wellness through gamification.
+              © Santulan. Empowering student wellness.
             </div>
           </div>
         </div>
