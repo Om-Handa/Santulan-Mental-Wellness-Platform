@@ -174,7 +174,7 @@ const Dashboard = () => {
           <div className="flex justify-center space-x-6 flex-wrap md:flex-nowrap gap-y-5 md:gap-y-0">
             {badges.map((badge, index) => (
               <div key={index} className="text-center">
-                <div className={`w-16 h-16 rounded-full mx-auto mb-2 flex items-center justify-center ${badge.unlocked
+                <div className={`w-16 h-16 rounded-full mx-auto hover:shadow-2xl hover:scale-105 mb-2 flex items-center justify-center ${badge.unlocked
                     ? badge.color === 'purple' ? 'bg-purple-500' :
                       badge.color === 'orange' ? 'bg-orange-500' :
                         'bg-green-500'
