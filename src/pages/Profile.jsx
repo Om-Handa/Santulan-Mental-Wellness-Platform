@@ -43,7 +43,7 @@ const Profile = () => {
             <div className="bg-card rounded-2xl p-6 border sticky top-24">
               <div className="text-center mb-6">
                 <div className="w-24 h-24 mx-auto rounded-full bg-gradient-card flex items-center justify-center text-4xl mb-4">
-                  🧘‍♀️
+                  H
                 </div>
                 <h1 className="text-2xl font-bold mb-1">Harry</h1>
                 <p className="text-muted-foreground mb-2">Level {userStats.level} • Mindful Explorer</p>
