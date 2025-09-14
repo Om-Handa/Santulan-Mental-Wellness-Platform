@@ -1,25 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { ArrowLeft } from "lucide-react"; // using lucide-react for back icon
+import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom"
 import { useState } from "react";
 
 
 export default function Login() {
-  
+  useEffect(() => {
+    window.scrollTo({
+      top: 0
+    })
+  }, [])
+
   const [ID, setID] = useState("")
-  const [Password, setPassword] =useState("")
+  const [Password, setPassword] = useState("")
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if(ID=="admin" && Password=="1234"){
+    if (ID == "admin" && Password == "1234") {
       navigate("/admindashboard")
     }
-    else if(ID=="harry" && Password=="1234"){
+    else if (ID == "harry" && Password == "1234") {
       navigate("/dashboard")
     }
-    else{
+    else {
       alert("Invalid ID or Password")
     }
   }
@@ -34,7 +39,6 @@ export default function Login() {
         </NavLink>
       </div>
 
-      {/* Centered Login Card */}
       <div className="flex flex-1 items-center justify-center">
         <div className="bg-white p-10 rounded-2xl shadow-xl w-full max-w-md border border-blue-100">
           <h2 className="text-2xl font-bold text-center mb-2 text-gray-900">
@@ -44,18 +48,17 @@ export default function Login() {
             Welcome back to Santulan
           </p>
 
-          {/* Form */}
           <form className="space-y-5">
             <input
               type="text"
-              placeholder="Email address" 
-              onChange={(e)=>{setID(e.target.value)}}
+              placeholder="Email address"
+              onChange={(e) => { setID(e.target.value) }}
               className="w-full px-4 py-3 rounded-lg bg-gray-50 text-gray-800 placeholder-gray-400 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <input
               type="password"
               placeholder="Password"
-              onChange={(e)=>{setPassword(e.target.value)}}
+              onChange={(e) => { setPassword(e.target.value) }}
               className="w-full px-4 py-3 rounded-lg bg-gray-50 text-gray-800 placeholder-gray-400 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
 

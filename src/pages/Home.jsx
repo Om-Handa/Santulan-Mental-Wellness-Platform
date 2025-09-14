@@ -1,11 +1,16 @@
 import { Link, NavLink } from "react-router-dom";
-import Navbar from "../components/Navbar"
 import Button from "../components/Button";
 import StatsCard from "../components/StatsCard";
 import { Heart, Users, BookOpen, Trophy } from "lucide-react"
 import SectionHeader from "../components/SectionHeader";
+import { useEffect } from "react";
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0
+    })
+  }, [])
   const stats = [
     { number: "1,500+", label: "Active Students" },
     { number: "10,000+", label: "Quests Completed" },
@@ -117,22 +122,21 @@ const Home = () => {
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-              <div key={index} className="text-center hover:shadow-xl border-l-[#2addf8] border-l-4 border-y-2 border-r-2 p-5 rounded-xl md:w-[25%] ">
-                <div className={`w-16 h-16 ${feature.bgColor} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                  <IconComponent className={`w-8 h-8 ${feature.color}`} />
+                <div key={index} className="text-center hover:shadow-xl border-l-[#2addf8] border-l-4 border-y-2 border-r-2 p-5 rounded-xl md:w-[25%] ">
+                  <div className={`w-16 h-16 ${feature.bgColor} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
+                    <IconComponent className={`w-8 h-8 ${feature.color}`} />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
               )
             })}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">

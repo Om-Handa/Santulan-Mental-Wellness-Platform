@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AdminNavbar from "../components/AdminNavbar";
 import { Mail, Phone, Edit2, } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 const AdminProfile = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0
+    })
+  }, [])
 
   return (
     <div className="flex h-screen bg-gray-800 text-white">
@@ -60,7 +65,6 @@ const AdminProfile = () => {
 
           <hr className="my-6 border-gray-700" />
 
-          {/* Professional Details */}
           <div>
             <h3 className="text-lg font-semibold mb-3">Professional Details</h3>
             <div className="space-y-2 text-gray-300 text-sm">

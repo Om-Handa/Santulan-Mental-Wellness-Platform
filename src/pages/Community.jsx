@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/Navbar";
 import Button from "../components/Button";
-import { Pin } from "lucide-react";
 
 const Community = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0
+    })
+  }, [])
   const [activeTab, setActiveTab] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -84,8 +88,8 @@ const Community = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
-      <div className="container mx-auto px-6 py-8 max-w-6xl">
+
+      <div className="container mx-auto px-6 py-8 max-w-6xl flex justify-center flex-col items-center">
         <div className="text-center mb-8">
           <h1 className="text-5xl font-bold text-primary mb-2">Peer Chat Forum</h1>
           <p className="text-muted-foreground mb-6 text-xl">Connect with others on your wellness journey</p>
@@ -96,17 +100,12 @@ const Community = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </div>
-            <input
-              type="text"
-              placeholder="Search for peers or groups"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 border border-border rounded-lg bg-card focus:outline-none focus:ring-2 focus:ring-primary"
+            <input type="text" placeholder="Search for peers or groups" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="w-full pl-10 pr-4 py-3 border border-border rounded-lg bg-card focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
         </div>
 
-        <div className="mb-8">
+        <div className="mb-8 w-11/12">
           <div className="flex justify-center items-center space-x-8 border-b border-border bg-gray-100 rounded-xl">
             {[
               { id: "all", label: "All Chats" },
@@ -116,11 +115,10 @@ const Community = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`pb-3 px-1 pt-2 w-[30%] font-medium border-b-2 transition-colors ${
-                  activeTab === tab.id
+                className={`pb-3 px-1 pt-2 w-[30%] font-medium border-b-2 transition-colors ${activeTab === tab.id
                     ? "border-primary text-primary"
                     : "border-transparent text-muted-foreground hover:text-foreground"
-                }`}
+                  }`}
               >
                 {tab.label}
               </button>
@@ -168,7 +166,7 @@ const Community = () => {
                   </div>
                 ))}
               </div>
-              
+
               <div className="p-8 text-center border-t">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-cyan-400 flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -189,12 +187,12 @@ const Community = () => {
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
                   <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <h3 className="text-lg font-bold">Support Groups</h3>
               </div>
-              
+
               <div className="space-y-4">
                 {supportGroups.map((group, index) => (
                   <div key={index} className="space-y-2">
@@ -212,27 +210,27 @@ const Community = () => {
                   </div>
                 ))}
               </div>
-              
+
               <Button variant="outline" className="w-full mt-4 text-sm">
                 View All Groups
               </Button>
             </div>
 
-            <div className="bg-card rounded-xl border p-6">
+            <div className="bg-card rounded-xl border p-6 w-11/12">
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center">
                   <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd"/>
+                    <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
                   </svg>
                 </div>
                 <h3 className="text-lg font-bold">Quick Actions</h3>
               </div>
-              
+
               <div className="space-y-3">
                 {quickActions.map((action, index) => (
-                  <Button 
+                  <Button
                     key={index}
-                    variant="outline" 
+                    variant="outline"
                     className="w-full justify-start"
                   >
                     <span className="mr-2">{action.icon}</span>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import AdminNavbar from "../components/AdminNavbar";
 import { NavLink } from "react-router-dom";
@@ -13,6 +13,11 @@ const students = [
 ];
 
 export default function Studentslist() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0
+    })
+  }, [])
   const [search, setSearch] = useState("");
   const filteredStudents = students.filter((s) =>
     s.name.toLowerCase().includes(search.toLowerCase())
@@ -61,7 +66,7 @@ export default function Studentslist() {
                   </td>
                   <td className="px-6 py-3">{student.issue}</td>
                   <td className="px-6 py-3">
-                    <NavLink to="/StudentReport" state={{name:student.name, issue:student.issue, color:student.color, college:student.college, status:student.status}} className="text-blue-400 hover:underline">
+                    <NavLink to="/StudentReport" state={{ name: student.name, issue: student.issue, color: student.color, college: student.college, status: student.status }} className="text-blue-400 hover:underline">
                       View Details
                     </NavLink>
                   </td>
@@ -82,7 +87,7 @@ export default function Studentslist() {
               </div>
               <p className="text-gray-400 text-sm">{student.college}</p>
               <p className="text-gray-300 text-sm mt-1">Issue: {student.issue}</p>
-              <NavLink to="/StudentReport" state={{name:student.name, issue:student.issue, color:student.color, college:student.college, status:student.status}} className="text-blue-400 hover:underline text-sm mt-2 block">
+              <NavLink to="/StudentReport" state={{ name: student.name, issue: student.issue, color: student.color, college: student.college, status: student.status }} className="text-blue-400 hover:underline text-sm mt-2 block">
                 View Details
               </NavLink>
             </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
     ResponsiveContainer,
     BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
@@ -7,8 +7,11 @@ import {
 import AdminNavbar from "../components/AdminNavbar";
 
 export default function AdminDashboard() {
-
-    // Sample data
+    useEffect(() => {
+        window.scrollTo({
+            top: 0
+        })
+    }, [])
     const lineData = [
         { name: "Jan", growth: 60 },
         { name: "Feb", growth: 55 },
@@ -75,7 +78,7 @@ export default function AdminDashboard() {
                             </ResponsiveContainer>
                         </div>
                     </div>
-                    
+
                     <div className="bg-gray-900 rounded-xl p-4 md:w-1/2">
                         <h3 className="mb-2 font-semibold">Well-being Improvement</h3>
                         <div className="w-full h-64">

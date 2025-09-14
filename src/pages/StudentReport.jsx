@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import AdminNavbar from "../components/AdminNavbar";
 import {
@@ -21,6 +21,11 @@ const data = [
 ];
 
 export default function StudentReport() {
+    useEffect(() => {
+        window.scrollTo({
+            top: 0
+        })
+    }, [])
 
     const location = useLocation();
     const { name, issue, color, college, status } = location.state || {};

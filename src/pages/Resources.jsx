@@ -1,8 +1,9 @@
 import Header from "../components/Navbar";
-import { useState } from "react";
+import { useStat,useEffect } from "react";
 import Card from "../components/ResourceCard";
 
 const resources = {
+
   Articles: [
     {
       category: "Stress Management",
@@ -10,7 +11,7 @@ const resources = {
       description: "Evidence-based strategies for handling college pressures",
       time: "8 min read",
       level: "Beginner",
-      Action:"📖 Read Article",
+      Action: "📖 Read Article",
       rating: 4.8,
     },
     {
@@ -18,7 +19,7 @@ const resources = {
       title: "Building Healthy Sleep Habits",
       description: "The science of sleep and practical tips for better rest",
       time: "12 min read",
-      Action:"📖 Read Article",
+      Action: "📖 Read Article",
       level: "Intermediate",
       rating: 4.9,
     },
@@ -28,7 +29,7 @@ const resources = {
       description: "Developing a healthy relationship with food",
       time: "6 min read",
       level: "Beginner",
-      Action:"📖 Read Article",
+      Action: "📖 Read Article",
       rating: 4.7,
     },
   ],
@@ -39,7 +40,7 @@ const resources = {
       description: "A short session to reduce stress and improve concentration",
       time: "15 min video",
       level: "Beginner",
-      Action:"🎥 Watch Video",
+      Action: "🎥 Watch Video",
       rating: 4.9,
     },
     {
@@ -48,7 +49,7 @@ const resources = {
       description: "Relaxing poses to wind down before bed",
       time: "20 min video",
       level: "Intermediate",
-      Action:"🎥 Watch Video",
+      Action: "🎥 Watch Video",
       rating: 4.8,
     },
   ],
@@ -59,7 +60,7 @@ const resources = {
       description: "Students share their wellness journeys",
       time: "25 min",
       level: "Beginner",
-      Action:"🎤 Listen Podcast",
+      Action: "🎤 Listen Podcast",
       rating: 4.6,
     },
     {
@@ -68,13 +69,18 @@ const resources = {
       description: "Tips to stay motivated and consistent",
       time: "30 min",
       level: "Intermediate",
-      Action:"🎤 Listen Podcast",
+      Action: "🎤 Listen Podcast",
       rating: 4.7,
     },
   ],
 };
 
 export default function WellnessResources() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0
+    })
+  }, [])
   const [activeTab, setActiveTab] = useState("Articles");
 
   return (
