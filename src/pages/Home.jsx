@@ -69,7 +69,7 @@ const Home = () => {
             <p className="text-xs text-muted-foreground">Your Mind, Your Strength</p>
           </div>
         </div>
-        <NavLink to="/chatbot" className=" justify-center md:h-3/4 md:px-5 px-3 bg-[#2addf8] m-1.5 mr-3 md:mr-10 flex items-center rounded-2xl text-white font-semibold ">Login</NavLink>
+        <NavLink to="/login" className=" justify-center md:h-3/4 md:px-5 px-3 bg-[#2addf8] m-1.5 mr-3 md:mr-10 flex items-center rounded-2xl text-white font-semibold ">Login</NavLink>
       </nav>
 
       <section className="relative overflow-hidden py-10 ">
