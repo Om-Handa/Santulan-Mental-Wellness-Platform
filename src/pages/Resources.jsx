@@ -1,6 +1,7 @@
 import Header from "../components/Navbar";
 import { useState ,useEffect } from "react";
 import Card from "../components/ResourceCard";
+import Chatbutton from "../components/Chatbutton"
 
 const resources = {
 
@@ -125,6 +126,7 @@ export default function WellnessResources() {
           Schedule a Session
         </button>
       </div>
+      <Chatbutton/>
     </div>
   );
 }

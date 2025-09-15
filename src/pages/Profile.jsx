@@ -6,6 +6,7 @@ import StatsCard from "../components/StatsCard";
 import ProgressBar from "../components/ProgressBar";
 import Card from "../components/Card";
 import SectionHeader from "../components/SectionHeader";
+import Chatbutton from "../components/Chatbutton"
 
 const Profile = () => {
   useEffect(() => {
@@ -40,7 +41,7 @@ const Profile = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="grid lg:grid-cols-4 gap-8">
           <div className="lg:col-span-1">
-            <div className="bg-card rounded-2xl p-6 border sticky top-24">
+            <div className="bg-card rounded2xl p-6 border sticky top-24">
               <div className="text-center mb-6">
                 <div className="w-24 h-24 mx-auto rounded-full bg-gradient-card flex items-center justify-center text-4xl mb-4">
                   H
@@ -128,6 +129,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
+      <Chatbutton/>
     </div>
   );
 };

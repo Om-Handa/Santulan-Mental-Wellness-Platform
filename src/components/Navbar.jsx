@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Avatar from "./Avatar";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,7 +43,7 @@ const Navbar = () => {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center space-x-4">
+        <NavLink to="/profile" className="hidden md:flex items-center space-x-4">
           <div className="flex items-center space-x-2">
             <span className="text-sm text-muted-foreground">🔔</span>
           </div>
@@ -53,7 +54,7 @@ const Navbar = () => {
               <span className="text-xs text-muted-foreground">Level 12</span>
             </div>
           </div>
-        </div>
+        </NavLink>
 
         <button
           className="md:hidden p-2"

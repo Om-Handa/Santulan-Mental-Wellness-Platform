@@ -5,11 +5,11 @@ import { NavLink } from "react-router-dom";
 
 const students = [
   { name: "Harry", college: "CGC, Landran", status: "High Risk", issue: "Anxiety", color: "red-600" },
-  { name: "Ashok", college: "CGC, Landran", status: "Moderate Risk", issue: "Stress", color: "yellow-600" },
+  { name: "Ashok", college: "CGC, Landran", status: "Moderate Risk", issue: "Stress", color: "yellow-500" },
   { name: "Rohan", college: "CGC, Landran", status: "Low Risk", issue: "N/A", color: "green-600" },
   { name: "Ishita", college: "CGC, Landran", status: "High Risk", issue: "Depression", color: "red-600" },
   { name: "Kashish", college: "CGC, Landran", status: "Low Risk", issue: "N/A", color: "green-600" },
-  { name: "Aman", college: "CGC, Landran", status: "Moderate Risk", issue: "Loneliness", color: "yellow-600" },
+  { name: "Aman", college: "CGC, Landran", status: "Moderate Risk", issue: "Loneliness", color: "yellow-500" },
 ];
 
 export default function Studentslist() {

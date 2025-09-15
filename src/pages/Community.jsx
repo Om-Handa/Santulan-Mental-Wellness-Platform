@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import Header from "../components/Navbar";
 import Button from "../components/Button";
+import Chatbutton from "../components/Chatbutton"
+import { NavLink } from "react-router-dom";
 
 const Community = () => {
   useEffect(() => {
@@ -18,40 +20,54 @@ const Community = () => {
       message: "CGC Landran, Counsellor",
       time: "📌",
       avatar: "",
-      isOnline: true
+      isOnline: true,
+      link: "#"
     },
     {
       id: 2,
+      name: "Chatbot",
+      message: "Your Mental health Chatbot",
+      time: "📌",
+      avatar: "",
+      isOnline: true,
+      link: "/chatbot"
+    },
+    {
+      id: 3,
       name: "Ashok",
       message: "Hey, how are you doing?",
       time: "2h",
       avatar: "",
-      isOnline: true
+      isOnline: true,
+      link: "#"
     },
     {
-      id: 3,
+      id: 4,
       name: "Rohan",
       message: "Anyone else feeling overwhelmed?",
       time: "4h",
       avatar: "",
-      isOnline: true
+      isOnline: true,
+      link: "#"
     },
     {
-      id: 4,
+      id: 5,
       name: "Study Group",
       message: "Let's plan a study group!",
       time: "1d",
       avatar: "",
       isGroup: true,
-      members: 12
+      members: 12,
+      link: "#"
     },
     {
-      id: 5,
+      id: 6,
       name: "Ishita",
       message: "Just finished a great meditation session.",
       time: "2d",
       avatar: "",
-      isOnline: false
+      isOnline: false,
+      link: "#"
     }
   ];
 
@@ -133,7 +149,7 @@ const Community = () => {
               <div className="space-y-0">
                 {chats.map((chat) => (
                   <div key={chat.id} className="p-4 border-b last:border-b-0 hover:bg-muted/50 cursor-pointer transition-colors">
-                    <div className="flex items-center space-x-3">
+                    <NavLink to={chat.link} className="flex items-center space-x-3">
                       <div className="relative">
                         <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center">
                           <span className="text-lg font-medium">
@@ -162,7 +178,7 @@ const Community = () => {
                       <div className="text-xs text-muted-foreground">
                         {chat.time}
                       </div>
-                    </div>
+                    </NavLink>
                   </div>
                 ))}
               </div>
@@ -242,6 +258,7 @@ const Community = () => {
           </div>
         </div>
       </div>
+      <Chatbutton/>
     </div>
   );
 };

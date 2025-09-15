@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar"
+import Chatbutton from "../components/Chatbutton"
 import Button from "../components/Button";
 import { useEffect } from "react";
 
@@ -191,6 +192,7 @@ const Dashboard = () => {
         </div>
 
       </div>
+      <Chatbutton/>
     </div>
   );
 };

@@ -12,6 +12,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import Studentlist from "./pages/Studentlist"
 import StudenReport from "./pages/StudentReport"
 import AdminProfile from "./pages/AdminProfile"
+import Chatbot from "./pages/Chatbot"
 import { Import } from "lucide-react";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,8 @@ const App = () => (
         <Route path="/studentlist" element={<Studentlist />} />
         <Route path="/studentreport" element={<StudenReport />} />
         <Route path="/adminprofile" element={<AdminProfile />} />
+        <Route path="/chatbot" element={<Chatbot />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
