@@ -89,7 +89,7 @@ const Dashboard = () => {
 
       <div className="container mx-auto px-6 py-8 max-w-6xl">
         <div className="mb-8">
-          <div className="bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-cyan-950/20 dark:to-blue-950/20 rounded-2xl p-6 border">
+          <div className="bg-gray-200 dark:from-cyan-950/20 dark:to-blue-950/20 rounded-2xl p-6 border">
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h2 className="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
