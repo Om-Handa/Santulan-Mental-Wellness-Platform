@@ -73,7 +73,7 @@ const Home = () => {
 
       <section className="relative overflow-hidden py-10 ">
         <div className="container mx-auto px-4 text-center">
-          <div className="inline-flex items-center rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 transition px-4 py-2 text-md text-white font-medium text-blue-600 mb-8">
+          <div className="inline-flex items-center rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 transition px-4 py-2 text-md text-white font-medium mb-8">
             🎯 Your Wellness Journey Starts Here
           </div>
 
