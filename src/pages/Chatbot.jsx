@@ -3,8 +3,7 @@ import Navbar from "../components/Navbar";
 import { NavLink } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
-// replace with process.env.REACT_APP_GEMINI_KEY or similar
-const GEMINI_API_KEY = "AIzaSyBKsLx1iTgT8ZH59Ovu3FuH-AFrGlqmNBo";
+const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
 const systemInstructionText = `
 You are a Mental Health support chatting platform for college students. you will help them to reduce their stress, anxiety or anything else. You will not talk about anything else.You wil chat with them and listen to their talks and support them.nly. if a person talks in any other language reply in that way mix that language with english dont use pure. Give them tips to reduce their problems. give short answers.
@@ -135,8 +134,8 @@ export default function MentalHealthChatbot() {
             <img src="/logo.png" alt="" />
           </div>
           <div>
-            <h1 className="md:text-xl font-bold text-foreground">SANTULAN</h1>
-            <p className="text-xs text-muted-foreground">Your Mind, Your Strength</p>
+            <h1 className="md:text-xl font-bold text-gray-900">SANTULAN</h1>
+            <p className="text-xs text-gray-500">Your Mind, Your Strength</p>
           </div>
         </div>
       </div>

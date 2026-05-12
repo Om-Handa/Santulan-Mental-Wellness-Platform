@@ -1,11 +1,9 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/Navbar";
 import Button from "../components/Button";
 import { NavLink } from "react-router-dom";
 import StatsCard from "../components/StatsCard";
 import ProgressBar from "../components/ProgressBar";
-import Card from "../components/Card";
-import SectionHeader from "../components/SectionHeader";
 import Chatbutton from "../components/Chatbutton"
 
 const Profile = () => {
@@ -35,20 +33,20 @@ const Profile = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-subtle">
+    <div className="min-h-screen bg-gray-50">
       <Header />
 
       <div className="container mx-auto px-4 py-8">
         <div className="grid lg:grid-cols-4 gap-8">
           <div className="lg:col-span-1">
-            <div className="bg-card rounded2xl p-6 border sticky top-24">
+            <div className="bg-white rounded-2xl p-6 border sticky top-24">
               <div className="text-center mb-6">
-                <div className="w-24 h-24 mx-auto rounded-full bg-gradient-card flex items-center justify-center text-4xl mb-4">
+                <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-4xl mb-4">
                   H
                 </div>
                 <h1 className="text-2xl font-bold mb-1">Harry</h1>
-                <p className="text-muted-foreground mb-2">Level {userStats.level} • Mindful Explorer</p>
-                <p className="text-sm text-muted-foreground">Member since {userStats.joinDate}</p>
+                <p className="text-gray-500 mb-2">Level {userStats.level} • Mindful Explorer</p>
+                <p className="text-sm text-gray-500">Member since {userStats.joinDate}</p>
               </div>
 
               <div className="mb-6">
@@ -63,14 +61,14 @@ const Profile = () => {
                   showText={false}
                   height="h-3"
                 />
-                <div className="text-center text-sm text-muted-foreground mt-2">
+                <div className="text-center text-sm text-gray-500 mt-2">
                   350 XP to next level
                 </div>
               </div>
 
               <div className="flex  gap-4 mb-6">
                 <StatsCard number={userStats.streak} label="Day Streak" />
-                <StatsCard number={userStats.totalQuests} label="Quests Done" className="text-accent" />
+                <StatsCard number={userStats.totalQuests} label="Quests Done" className="text-purple-500" />
               </div>
 
               <div className="flex flex-col gap-2">
@@ -85,15 +83,15 @@ const Profile = () => {
 
             <div className="space-y-8">
               <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                <Card>
+                <div className="bg-white border rounded-xl p-6 shadow-sm">
                   <StatsCard number={userStats.xp} label="Total XP Earned" />
-                </Card>
-                <Card>
-                  <StatsCard number={userStats.achievements} label="Achievements Unlocked" className="text-accent" />
-                </Card>
-                <Card className="col-span-2 md:col-span-1 flex justify-center">
+                </div>
+                <div className="bg-white border rounded-xl p-6 shadow-sm">
+                  <StatsCard number={userStats.achievements} label="Achievements Unlocked" className="text-purple-500" />
+                </div>
+                <div className="bg-white border rounded-xl p-6 shadow-sm">
                   <StatsCard number={userStats.totalQuests} label="Quests Completed" className="text-green-500 " />
-                </Card>
+                </div>
               </div>
 
               <div className="mb-8">
@@ -117,19 +115,23 @@ const Profile = () => {
                 </div>
               </div>
 
-              <Card>
-                <SectionHeader title="This Week's Progress" />
+              <div className="bg-white border rounded-xl p-6 shadow-sm">
+                <div className="mb-6">
+                  <h2 className="text-2xl font-bold">
+                    This Week's Progress
+                  </h2>
+                </div>
                 <div className="space-y-4">
                   <ProgressBar current={5} target={7} label="Meditation Sessions" />
                   <ProgressBar current={8} target={10} label="Community Interactions" />
                   <ProgressBar current={14} target={21} label="Daily Quests" />
                 </div>
-              </Card>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <Chatbutton/>
+      <Chatbutton />
     </div>
   );
 };

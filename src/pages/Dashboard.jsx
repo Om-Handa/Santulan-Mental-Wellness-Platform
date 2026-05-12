@@ -54,33 +54,33 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Navbar />
 
-      <div className="bg-gradient-to-r from-primary/10 to-accent/10 border-b ">
+      <div className="bg-gradient-to-r from-blue-100 to-purple-100 border-b ">
         <div className="container mx-auto px-6 py-12">
           <div className="flex items-center md:justify-between justify-center mb-8 md:flex-row flex-col gap-10 md:gap-0">
             <div className="flex items-center md:justify-between justify-center flex-col md:inline">
-              <div className="inline-block bg-primary/10 text-primary  px-4 py-2 rounded-full text-sm font-medium mb-4">
+              <div className="inline-block bg-blue-600/10 text-blue-600  px-4 py-2 rounded-full text-sm font-medium mb-4">
                 🎯 Your Wellness Journey Starts Here
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center md:text-start">
                 Welcome back, <span className="gradient-text">Harry!</span>
               </h1>
-              <p className="text-xl text-muted-foreground text-center md:text-start">
+              <p className="text-xl text-gray-500 text-center md:text-start">
                 Ready to continue your wellness adventure and level up your mental health?
               </p>
             </div>
             <div className="text-right w-full md:w-auto flex justify-center align-center">
-              <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 border md:w-auto md:h-auto w-3/4 h-3/4 flex flex-col justify-center align-center">
-                <div className="text-3xl font-bold text-center text-primary mb-1 ">Level 12</div>
-                <div className="text-sm text-muted-foreground text-center mb-3">Mindful Explorer</div>
+              <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 border md:w-auto md:h-auto w-3/4 h-3/4 flex flex-col justify-center align-center">
+                <div className="text-3xl font-bold text-center text-blue-600 mb-1 ">Level 12</div>
+                <div className="text-sm text-gray-500 text-center mb-3">Mindful Explorer</div>
                 <div className="w-full flex justify-center align-center">
-                  <div className="w-24 h-2 bg-border rounded-full overflow-hidden flex">
-                    <div className="w-3/5 h-full bg-gradient-to-r from-primary to-accent"></div>
+                  <div className="w-24 h-2 bg-gray-200 rounded-full overflow-hidden flex">
+                    <div className="w-3/5 h-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
                   </div>
                 </div>
-                <div className="text-xs text-muted-foreground mt-1 text-center">350 XP to Level 13</div>
+                <div className="text-xs text-gray-500 mt-1 text-center">350 XP to Level 13</div>
               </div>
             </div>
           </div>
@@ -108,15 +108,15 @@ const Dashboard = () => {
                 ></div>
               </div>
             </div>
-            <p className="text-sm text-muted-foreground text-center">650 / 1000 XP to next level</p>
+            <p className="text-sm text-gray-500 text-center">650 / 1000 XP to next level</p>
           </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 mb-8">
           {stats.map((stat, index) => (
-            <div key={index} className="bg-card rounded-xl p-6 border hover:shadow-lg transition-shadow">
+            <div key={index} className="bg-white rounded-xl p-6 border hover:shadow-lg transition-shadow">
               <div className="flex items-center justify-between mb-2">
-                <h3 className="text-sm font-medium text-muted-foreground">{stat.label}</h3>
+                <h3 className="text-sm font-medium text-gray-500">{stat.label}</h3>
                 <span className="text-2xl">{stat.icon}</span>
               </div>
               <div className="mb-1">
@@ -141,7 +141,7 @@ const Dashboard = () => {
           <h2 className="text-2xl font-bold mb-6 text-center">Today's Quests</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {dailyQuests.map((quest) => (
-              <div key={quest.id} className="bg-card rounded-xl border overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
+              <div key={quest.id} className="bg-white rounded-xl border overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
                 <div className={`h-2 ${quest.color === 'green' ? 'bg-green-500' :
                     quest.color === 'orange' ? 'bg-orange-500' :
                       'bg-red-500'
@@ -154,7 +154,7 @@ const Dashboard = () => {
                     <span className="text-2xl">{quest.icon}</span>
                   </div>
                   <h3 className="font-bold text-lg mb-2">{quest.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{quest.description}</p>
+                  <p className="text-sm text-gray-500 mb-4">{quest.description}</p>
                   <Button
                     className={`w-full ${quest.color === 'green' ? 'bg-green-500 hover:bg-green-600' :
                         quest.color === 'orange' ? 'bg-orange-500 hover:bg-orange-600' :
@@ -163,7 +163,7 @@ const Dashboard = () => {
                   >
                     Complete
                   </Button>
-                  <p className="text-xs text-muted-foreground mt-2">+{quest.xp} XP</p>
+                  <p className="text-xs text-gray-500 mt-2">+{quest.xp} XP</p>
                 </div>
               </div>
             ))}
